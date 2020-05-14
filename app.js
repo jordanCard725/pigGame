@@ -13,20 +13,28 @@ GAME RULES: THE PIG GAME
 
 /////////////////////////////////////////////////////////////
 ///// set some variables to be used :
+////////////////////////////////////////////////////////
 
-var scores, roundScores, activePlayer, gamePlaying, player1, player2, six, winningScore;
+var scores, roundScores, activePlayer, gamePlaying, player1, player2, six, winningScore, rolledOne0, rolledOne1;
 
 init();
+pickNames();
 
-////////////////////////////////////////////////////////////////// Allows player 1 & 2 to pick a name :
+////////////////////////////////////////////////////////////////////
+///// Allows player 1 & 2 to pick a name :
+////////////////////////////////////////////////////////
 
+function pickNames () {
 player1 = prompt('Please enter player one\'s name!');
 document.querySelector('#name-0').textContent = player1;
 player2 = prompt('Please enter player two\'s name!');
 document.querySelector('#name-1').textContent = player2;
+}
 
 ////////////////////////////////////////////////////////////
-///// 'ROLL' BUTTON : Event Listener - instead, we're writing the function directly into the argument :
+///// 'ROLL' BUTTON
+////////////////////////////////////////////////////////////
+//Event Listener - instead, we're writing the function directly into the argument :
 
 document.querySelector('.btn-roll').addEventListener('click', function () {
 
@@ -34,17 +42,14 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
   if (winningScore > 1) {
     gamePlaying = true;
   } else if (winningScore === 1) {
-    alert('You must start a New Game!');
+    alert('You need to start a New Game!');
   } else {
-    alert('You must choose a Winning score! (top left) -- and hit \'submit\'');
+    alert('You need to choose a Winning score! (top left) -- Then hit the \'submit\' button');
   }
 
-  if (rollOne0 || rollOne1) {
-    removeRolledOne();
-  }
+  removeRolledOne();
 
   if (gamePlaying) {
-
     // 1. Random #
     var dice = Math.floor(Math.random() * 6) + 1;
 
@@ -87,6 +92,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
 ////////////////////////////////////////////////////////
 ////// 'HOLD' BUTTON : Event Listener -
+////////////////////////////////////////////////////////
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
   if (gamePlaying) {
@@ -197,6 +203,7 @@ function init () {
 
   // Removes class rolled-one-# from UI
   removeRolledOne();
+
 };
 
 
@@ -204,12 +211,9 @@ function init () {
 // Remove the text that says you rolled a one :
 
 function removeRolledOne () {
-  document.querySelector('.rolled-one-0').style.display = 'none';
-  document.querySelector('.rolled-one-1').style.display = 'none';
+    rollOne0 = document.querySelector('.rolled-one-0').style.display = 'none';
+    rollOne1 = document.querySelector('.rolled-one-1').style.display = 'none';
 }
-
-var rollOne0 = document.querySelector('.rolled-one-0').style.display = 'block';
-var rollOne1 = document.querySelector('.rolled-one-0').style.display = 'block';
 
 
 ////// Event Listener for 'Winning Score' input :

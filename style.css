@@ -141,7 +141,10 @@ i {
     transition: margin 0.3s;
 }
 
-/* section for choosing the winning score */
+/**********************************************
+*** section for choosing the winning score ***
+**********************************************/
+
 .choose-winning-score {
     font-size: 18px;
     font-weight: bold;
@@ -166,6 +169,21 @@ i {
     padding: 2px;
 }
 
+/**********************************************
+***** section for adding the rules board *****
+**********************************************/
+
+.rules {
+    position: absolute;
+    z-index: 19;
+    background-color: #EB4D4D;
+    width: 600px;
+    height: 500px;
+    top: 65px;
+    left: 100px;
+    padding: 40px;
+    display: none;
+}
 
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}

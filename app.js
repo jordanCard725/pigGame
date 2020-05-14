@@ -1,4 +1,6 @@
 /*
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 GAME RULES: THE PIG GAME
 
 - The game has 2 players, playing in rounds
@@ -9,20 +11,22 @@ GAME RULES: THE PIG GAME
 
 */
 
+/////////////////////////////////////////////////////////////
 ///// set some variables to be used :
 
 var scores, roundScores, activePlayer, gamePlaying, player1, player2, six, winningScore;
 
 init();
 
-///// Allows player 1 & 2 to pick a name :
+////////////////////////////////////////////////////////////////// Allows player 1 & 2 to pick a name :
 
 player1 = prompt('Please enter player one\'s name!');
 document.querySelector('#name-0').textContent = player1;
 player2 = prompt('Please enter player two\'s name!');
 document.querySelector('#name-1').textContent = player2;
 
-///// Event Listener for 'roll' button - instead, we're writing the function directly into the argument :
+////////////////////////////////////////////////////////////
+///// 'ROLL' BUTTON : Event Listener - instead, we're writing the function directly into the argument :
 
 document.querySelector('.btn-roll').addEventListener('click', function () {
 
@@ -81,7 +85,8 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
   }
 });
 
-////// Event Listener for 'hold' button :
+////////////////////////////////////////////////////////
+////// 'HOLD' BUTTON : Event Listener -
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
   if (gamePlaying) {
@@ -119,12 +124,12 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 });
 
 
-//////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 // Event Listener for 'New Game' button :
 
 document.querySelector('.btn-new').addEventListener('click', init);
 
-
+///////////////////////////////////////////////////////////
 ///// nextPlayer function :
 
 function nextPlayer () {
@@ -148,7 +153,7 @@ function nextPlayer () {
   six = 0;
 }
 
-
+/////////////////////////////////////////////////////////////
 ///// Init function (used on refresh and 'new game' button):
 
 function init () {
@@ -192,9 +197,11 @@ function init () {
 
   // Removes class rolled-one-# from UI
   removeRolledOne();
-
-
 };
+
+
+/////////////////////////////////////////////////////////////
+// Remove the text that says you rolled a one :
 
 function removeRolledOne () {
   document.querySelector('.rolled-one-0').style.display = 'none';

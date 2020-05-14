@@ -26,13 +26,17 @@ document.querySelector('#name-1').textContent = player2;
 
 document.querySelector('.btn-roll').addEventListener('click', function () {
 
-  ////// Event Listener for 'Winning Score' input :
+  // Event Listener for 'Winning Score' input :
   if (winningScore > 1) {
     gamePlaying = true;
   } else if (winningScore === 1) {
     alert('You must start a New Game!');
   } else {
     alert('You must choose a Winning score! (top left) -- and hit \'submit\'');
+  }
+
+  if (rollOne0 || rollOne1) {
+    removeRolledOne();
   }
 
   if (gamePlaying) {
@@ -71,6 +75,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
     } else {
       // Next Player : (using ternary operator)
+      document.querySelector('.rolled-one-' + activePlayer).style.display = 'block';
       nextPlayer();
     }
   }
@@ -114,7 +119,8 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 });
 
 
-/////// Event Listener for 'New Game' button :
+//////////////////////////////////////////////
+// Event Listener for 'New Game' button :
 
 document.querySelector('.btn-new').addEventListener('click', init);
 
@@ -126,6 +132,7 @@ function nextPlayer () {
   // nextPlayer : (using ternary operator)
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
   roundScore = 0;
+
 
   // Reset roundscore to 0 on browser
   document.getElementById('current-0').textContent = '0';
@@ -183,10 +190,19 @@ function init () {
   document.querySelector('.player-0-panel').classList.add('active');
   document.querySelector('.player-1-panel').classList.remove('active');
 
+  // Removes class rolled-one-# from UI
+  removeRolledOne();
+
+
 };
 
+function removeRolledOne () {
+  document.querySelector('.rolled-one-0').style.display = 'none';
+  document.querySelector('.rolled-one-1').style.display = 'none';
+}
 
-
+var rollOne0 = document.querySelector('.rolled-one-0').style.display = 'block';
+var rollOne1 = document.querySelector('.rolled-one-0').style.display = 'block';
 
 
 ////// Event Listener for 'Winning Score' input :

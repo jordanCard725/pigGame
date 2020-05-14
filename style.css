@@ -156,6 +156,15 @@ i {
 #submit {
     color: #EB4D4D;
 }
+#submit:hover {
+    background-color: lightgrey;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 60px;
+    padding: 2px;
+}
 
 
 .btn-new { top: 45px;}

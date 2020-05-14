@@ -210,6 +210,12 @@ i {
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-rules {
+    top: 100px;
+    padding: 3px;
+    background-color: #EB4D4D;
+    color :#f7f7f7;
+}
 
 .dice {
     position: absolute;

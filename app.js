@@ -25,18 +25,23 @@ init();
 ///// 'LETS PLAY' BUTTON :
 ////////////////////////////////////////////////////////
 
-document.querySelector('.rules').addEventListener('click', function () {
+document.querySelector('.btn-play').addEventListener('click', function () {
   document.querySelector('.rules').style.display = 'none';
 
-  if ((player1 === '' || 'Player 1') || (player2 === '' || 'Player 2')) {
+  // if ((player1 === '' || 'Player 1') || (player2 === '' || 'Player 2')) {
+  //   pickNames();
+  // }
+
+  if (gamePlaying === false) {
     pickNames();
   }
-
-  if (gamePlaying) {
-    pickNames();
-  }
-
 })
+
+////////////////////////////////////////////////////////////
+///// 'RULES' BUTTON :
+////////////////////////////////////////////////////////
+
+document.querySelector('.btn-rules').addEventListener('click', showRules);
 
 
 ////////////////////////////////////////////////////////////
@@ -80,7 +85,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     var dice = Math.floor(Math.random() * 6) + 1;
 
     // 2. Display the result
-    var diceDOM = document.querySelector('.dice')
+    var diceDOM = document.querySelector('.dice');
     diceDOM.style.display = 'block';
     diceDOM.src = 'dice-' + dice + '.png';
 
@@ -129,7 +134,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     // Update the UI (user interface) :
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-    // Check if player won the game :
+    // Check if player WON the game :
     if (scores[activePlayer] >= winningScore) {
 
       // changes player # to winner!

@@ -11,14 +11,19 @@
 
     <body>
         <div class="wrapper clearfix">
-          <!-- input winning number section -->
+
+            <!-- input winning number section -->
+
             <div class="choose-winning-score">
                 <label>Choose winning score: <span>(typically around 100 points)</span> </label>
                 <input id="winning-score" value="0" name="winning-score" type="number" step="10" min="30" max="500">
                 <input type="submit" id="submit" name="submit" value="Submit">
             </div>
 
+            <!-- player 1 panel   -->
+
             <div class="player-0-panel active">
+                <div class="rolled-one-0">You rolled a one! Next players turn...</div>
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">43</div>
                 <div class="player-current-box">
@@ -27,7 +32,10 @@
                 </div>
             </div>
 
+            <!-- player 2 panel -->
+
             <div class="player-1-panel">
+              <div class="rolled-one-1">You rolled a one! Next players turn...</div>
                 <div class="player-name" id="name-1">Player 2</div>
                 <div class="player-score" id="score-1">72</div>
                 <div class="player-current-box">
@@ -36,9 +44,13 @@
                 </div>
             </div>
 
+            <!-- buttons -->
+
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+
+            <!-- dice -->
 
             <img src="dice-5.png" alt="Dice" class="dice">
         </div>

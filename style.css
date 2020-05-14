@@ -110,7 +110,8 @@ button {
     transform: translateX(-50%);
     color: #555;
     background: none;
-    border: none;
+    border: solid #EB4D4D 1px;
+    border-radius: 20px;
     font-family: Lato;
     font-size: 20px;
     text-transform: uppercase;
@@ -119,7 +120,10 @@ button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { font-weight: 600; }
+button:hover {
+  font-weight: 600;
+  background-color: lightgrey;
+}
 button:hover i { margin-right: 20px; }
 
 button:focus {

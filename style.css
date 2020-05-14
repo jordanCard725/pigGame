@@ -24,6 +24,7 @@ body {
     position: relative;
     height: 100vh;
     color: #555;
+    width: auto;
 }
 
 .wrapper {
@@ -175,15 +176,36 @@ i {
 
 .rules {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 19;
-    background-color: #EB4D4D;
-    width: 600px;
-    height: 500px;
-    top: 65px;
-    left: 100px;
+    background-color: darkred;
+    color: #fff;
+    width: 800px;
+    height: 520px;
     padding: 40px;
+    margin-top: 5px;
     display: none;
+    border-radius: 20px;
 }
+.rules h1, h3 {
+    text-align: center;
+}
+.rules li {
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 25px;
+    margin-top: 5px;
+}
+.rules button {
+    bottom: 80px;
+    background-color: lightgrey;
+}
+
+/**********************************************
+************ section for buttons *************
+**********************************************/
 
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}

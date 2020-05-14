@@ -17,18 +17,44 @@ GAME RULES: THE PIG GAME
 
 var scores, roundScores, activePlayer, gamePlaying, player1, player2, six, winningScore, rolledOne0, rolledOne1;
 
+showRules();
 init();
-pickNames();
+//pickNames();
+
+////////////////////////////////////////////////////////////
+///// 'LETS PLAY' BUTTON :
+////////////////////////////////////////////////////////
+
+document.querySelector('.rules').addEventListener('click', function () {
+  document.querySelector('.rules').style.display = 'none';
+
+  if ((player1 === '' || 'Player 1') || (player2 === '' || 'Player 2')) {
+    pickNames();
+  }
+
+  if (gamePlaying) {
+    pickNames();
+  }
+
+})
+
+
+////////////////////////////////////////////////////////////
+///// SHOW RULES :
+////////////////////////////////////////////////////////
+function showRules () {
+  document.querySelector('.rules').style.display = 'block';
+}
 
 ////////////////////////////////////////////////////////////////////
 ///// Allows player 1 & 2 to pick a name :
 ////////////////////////////////////////////////////////
 
 function pickNames () {
-player1 = prompt('Please enter player one\'s name!');
-document.querySelector('#name-0').textContent = player1;
-player2 = prompt('Please enter player two\'s name!');
-document.querySelector('#name-1').textContent = player2;
+  player1 = prompt('Please enter player one\'s name!');
+  document.querySelector('#name-0').textContent = player1;
+  player2 = prompt('Please enter player two\'s name!');
+  document.querySelector('#name-1').textContent = player2;
 }
 
 ////////////////////////////////////////////////////////////
@@ -42,7 +68,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
   if (winningScore > 1) {
     gamePlaying = true;
   } else if (winningScore === 1) {
-    alert('You need to start a New Game!');
+    alert('Someone already won this game. You need to start a New Game!');
   } else {
     alert('You need to choose a Winning score! (top left) -- Then hit the \'submit\' button');
   }
@@ -170,6 +196,12 @@ function init () {
   six = 0;
   gamePlaying = false;
   winningScore = 0;
+  // player1 = 'Player 1';
+  // player2 = 'Player 2';
+
+  // if ((player1 === '' || 'Player 1') || (player2 === '' || 'Player 2')) {
+  //   pickNames();
+  // }
 
   document.querySelector('#submit').addEventListener('click', function () {
     winningScore = document.querySelector('#winning-score').value;

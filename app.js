@@ -30,9 +30,9 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
   if (winningScore > 1) {
     gamePlaying = true;
   } else if (winningScore === 1) {
-    alert('You must start a New Game!')
+    alert('You must start a New Game!');
   } else {
-    alert('You must choose a Winning score! (top left) -- and hit \'submit\'')
+    alert('You must choose a Winning score! (top left) -- and hit \'submit\'');
   }
 
   if (gamePlaying) {
@@ -108,7 +108,6 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
     } else {
 
-      // Next player :
       nextPlayer();
     }
   }
@@ -137,7 +136,7 @@ function nextPlayer () {
   document.querySelector('.player-1-panel').classList.toggle('active');
 
   // Clear the dice so that next player has clean screen :
-  document.querySelector('.dice').style.display = 'none';
+  //document.querySelector('.dice').style.display = 'none';
 
   six = 0;
 }
